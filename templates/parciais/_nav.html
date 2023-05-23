@@ -1,0 +1,30 @@
+<div class="container-fluid p-0">
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5">
+      <a href="{% url 'index' %}" class="navbar-brand d-block d-lg-none">
+          <h1 class="m-0 display-4 text-uppercase text-info">Blog<span class="text-white font-weight-normal">Notícias</span></h1>
+      </a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
+          <div class="navbar-nav mr-auto py-0">
+              <a href="{% url 'index' %}" class="nav-item nav-link active">Início</a>
+              <div class="nav-item dropdown">
+                  <a href="{% url 'index' %}" class="nav-link dropdown-toggle" data-toggle="dropdown">Categorias</a>
+                  <div class="dropdown-menu rounded-0 m-0">
+                      <a href="/categoria/ciencia" class="dropdown-item">Ciência</a>
+                      <a href="/categoria/entretenimento" class="dropdown-item">Entretenimento</a>
+                      <a href="/categoria/informativo" class="dropdown-item">Informativo</a>
+                      <a href="/categoria/economia" class="dropdown-item">Economia</a>
+                      <a href="/categoria/tecnologia" class="dropdown-item">Tecnologia</a>
+                  </div>
+              </div>
+              <a href="/post/11" class="nav-item nav-link">Contato</a>
+          </div>
+          <form class="form-inline my-2 my-lg-0 ml-lg-4" action="{% url 'post_busca' %}">
+            <input name="termo" value="{{ request.GET.termo }}" class="form-control mr-sm-2" type="search" placeholder="Pesquisar"
+                   aria-label="Search">
+        </form>
+      </div>
+  </nav>
+</div>
